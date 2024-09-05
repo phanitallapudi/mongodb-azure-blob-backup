@@ -17,6 +17,7 @@ PASSWORD = os.getenv("MONGO_PASSWORD")
 CLUSTER_NAME = os.getenv("MONGO_CLUSTER_NAME")
 CLUSTER_ADDRESS = os.getenv("MONGO_CLUSTER_ADDRESS")
 DATABASE_NAME = os.getenv("DATABASE_NAME")
+COUNT = int(os.getenv("COUNT"))
 
 MONGODB_URI = f"mongodb+srv://{USERNAME}:{PASSWORD}@{CLUSTER_ADDRESS}/?retryWrites=true&w=majority&appName={CLUSTER_NAME}"
 
@@ -51,8 +52,8 @@ def manage_backups():
     sorted_folders = sorted(folder_names, reverse=True)
 
     # Keep only the most recent 7 backups
-    if len(sorted_folders) > 1:
-        folders_to_delete = sorted_folders[1:]
+    if len(sorted_folders) > COUNT:
+        folders_to_delete = sorted_folders[COUNT:]
         for folder in folders_to_delete:
             # Delete all blobs in the folder
             blobs_to_delete = container_client.list_blobs(name_starts_with=folder)
