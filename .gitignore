@@ -30,3 +30,6 @@ nohup.out
 
 # macOS
 .DS_Store
+
+# Project File
+cron.log
