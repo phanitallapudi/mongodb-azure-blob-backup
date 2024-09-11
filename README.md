@@ -17,4 +17,4 @@ Ensure you have a `.env` file with the following environment variables, please r
 
 ## Crontab config
 
-* * * * * /path/to/venv/bin/python /path/to/your_script.py >> /path/to/your_log_directory/cron.log 2>&1
+`* * * * * /path/to/venv/bin/python /path/to/your_script.py >> /path/to/your_log_directory/cron.log 2>&1`
