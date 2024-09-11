@@ -14,3 +14,7 @@ This project backs up MongoDB collections to Azure Blob Storage as JSON files. I
 ## Environment Variables
 
 Ensure you have a `.env` file with the following environment variables, please reference to `.env.example` for reference
+
+## Crontab config
+
+* * * * * /path/to/venv/bin/python /path/to/your_script.py >> /path/to/your_log_directory/cron.log 2>&1
